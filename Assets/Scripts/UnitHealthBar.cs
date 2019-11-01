@@ -19,11 +19,7 @@ public class UnitHealthBar : MonoBehaviour
         maxSize = healthFill.sizeDelta.x;
     }
 
-    void Update ()
-    {
-        transform.eulerAngles = cam.transform.eulerAngles;
-    }
-
+    // called when the unit's health is modified
     public void UpdateHealthBar (int curHp, int maxHp)
     {
         float healthPercent = (float)curHp / (float)maxHp;

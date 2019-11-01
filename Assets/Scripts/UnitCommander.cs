@@ -68,7 +68,7 @@ public class UnitCommander : MonoBehaviour
         // are just selecting 1 unit?
         if (units.Length == 1)
         {
-            units[0].MoveToPosition(resource.transform.position);
+            units[0].GatherResource(resource, resource.transform.position);
         }
         // otherwise, calculate the unit group formation
         else
@@ -76,7 +76,7 @@ public class UnitCommander : MonoBehaviour
             Vector3[] destinations = UnitMover.GetUnitGroupDestinationsAroundResource(resource.transform.position, units);
 
             for (int x = 0; x < units.Length; x++)
-                units[x].MoveToPosition(destinations[x]);
+                units[x].GatherResource(resource, destinations[x]);
         }
     }
 

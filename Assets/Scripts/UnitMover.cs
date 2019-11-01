@@ -41,6 +41,7 @@ public class UnitMover : MonoBehaviour
         for(int x = 0; x < units.Length; x++)
         {
             float angle = unitDistanceGap * x;
+            //angle = Random.Range(0.0f, 360.0f);
             Vector3 dir = new Vector3(Mathf.Sin(angle * Mathf.Deg2Rad), 0, Mathf.Cos(angle * Mathf.Deg2Rad));
             destinations[x] = resourcePos + dir;
         }
