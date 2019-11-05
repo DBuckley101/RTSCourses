@@ -13,14 +13,13 @@ public class GameManager : MonoBehaviour
         instance = this;
     }
 
+    // returns a random enemy player
     public Player GetRandomEnemyPlayer (Player me)
     {
         Player ranPlayer = players[0];
 
         while(ranPlayer == me)
-        {
             ranPlayer = players[Random.Range(0, players.Length)];
-        }
 
         return ranPlayer;
     }

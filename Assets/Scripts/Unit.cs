@@ -275,6 +275,7 @@ public class Unit : MonoBehaviour
         Destroy(gameObject);
     }
 
+    // if we're going to collect a resource, move away if we collide with another unit
     void OnCollisionEnter (Collision collision)
     {
         if(collision.gameObject.CompareTag("Unit"))

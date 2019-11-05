@@ -27,17 +27,17 @@ public class PlayerAI : MonoBehaviour
             player.CreateNewUnit();
     }
 
+    // called when a new unit is created
     public void OnUnitCreated (Unit unit)
     {
         unit.GetComponent<UnitAI>().InitializeAI(this, unit);
     }
 
+    // gets the closest resource to the position (random between nearest 3 for some variance)
     public ResourceSource GetClosestResource (Vector3 pos)
     {
         ResourceSource[] closest = new ResourceSource[3];
         float[] closestDist = new float[3];
-        //ResourceSource closest = null;
-        //float closestDist = 0.0f;
 
         foreach(ResourceSource resource in resources)
         {

@@ -93,6 +93,7 @@ public class UnitAI : MonoBehaviour
             return null;
     }
 
+    // called when there's no more resources - chase after a random enemy
     void PursueEnemy ()
     {
         Player enemyPlayer = GameManager.instance.GetRandomEnemyPlayer(unit.player);
