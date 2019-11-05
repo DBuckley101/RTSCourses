@@ -51,7 +51,10 @@ public class UnitSelection : MonoBehaviour
 
         if (Physics.Raycast(cam.ScreenPointToRay(Input.mousePosition), out hit, 100, unitLayerMask))
         {
-            selectedUnits.Add(hit.collider.GetComponent<Unit>());
+            Unit unit = hit.collider.GetComponent<Unit>();
+
+            if(player.IsMyUnit(unit))
+                selectedUnits.Add(unit);
         }
 
         ToggleSelectionVisual(true);
